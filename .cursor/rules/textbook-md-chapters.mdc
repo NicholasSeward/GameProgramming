@@ -1,0 +1,53 @@
+---
+description: Conventions for writing course module markdown (ported from C++Book)
+globs: "**/*.md"
+alwaysApply: false
+---
+
+# Course Module Markdown
+
+Conversational lesson content as `.md` files inside **module folders** (for example `Module 02 - Search, Sort, and Interactive Structure/content.md`).
+
+This repo follows the same conventions as [C++Book](../C++Book/.cursor/rules/textbook-md-chapters.mdc). When in doubt, match that style.
+
+## Structure
+
+| Term | Meaning | Example |
+|------|---------|---------|
+| **Module** | A topic folder and its lesson files | `Module 02 - Search, Sort, and Interactive Structure/` |
+| **Content file** | The main lesson `.md` in a module folder | `content.md` |
+
+Inside a content file, `##` / `###` headings are **blocks** within that lesson, not separate modules.
+
+## Voice
+
+- One concept at a time; build on earlier modules when needed.
+- Plain language, short paragraphs; explain **why**, not only **what**.
+- End sections with something to **try** when hands-on practice fits.
+- Do not use em dashes (`—`), en dashes as punctuation (`–`), or `--` as a stand-in. Use a period, comma, colon, parentheses, or split into two sentences instead.
+
+## Headings
+
+| Level | Use |
+|-------|-----|
+| `#` | Lesson title, **once** at the top |
+| `##` | Major blocks (hook, core concept, examples, mistakes, summary) |
+| `###` | Subsections within a `##` block |
+
+## Callouts
+
+Every line of a callout must start with `>`. Use exactly one prefix: `NOTE:`, `PREFERENCE:`, `PROTIP:`, `HISTORY:`, `AI:`.
+
+## Code and examples
+
+- Use `cpp` for runnable C++ examples.
+- Use `sdl2` for interactive SDL2 demos (640×480 canvas in TxtBook).
+- Do not use `using namespace std;` in C++ examples.
+- Prefer `.at()` instead of `[]` for container access.
+- Prefer zero-based `for` loops when the variable only counts iterations.
+- Use vertically aligned braces in normal C++ examples.
+- Put `int main()` before helper function **definitions** in single-file examples.
+- One `cpp` fence per playground; use `// @file:` for multi-file examples.
+- For SDL2: `#include <SDL2/SDL.h>`, call `SDL_Delay(16)` once per frame, load assets once before the loop.
+
+See C++Book rules for full TxtBook playground, SDL2 asset, and details-block conventions.
